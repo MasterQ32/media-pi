@@ -34,6 +34,12 @@ systemctl enable bluetooth-agent
 systemctl enable bluetooth-driver
 ```
 
+### Changing bluetooth device name
+
+```
+bluetoothctl system-alias 'MediaPi'
+```
+
 ## Further Reading
 
 - https://scribles.net/auto-power-on-bluetooth-adapter-on-boot-up/
