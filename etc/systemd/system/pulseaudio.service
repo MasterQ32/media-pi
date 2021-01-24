@@ -1,0 +1,11 @@
+[Unit]
+Description=pulseaudio System Service
+
+[Service]
+type=simple
+ExecStart=/usr/bin/pulseaudio --system --disallow-exit 
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
