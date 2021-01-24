@@ -1,0 +1,34 @@
+#!/usr/bin/pulseaudio -nF
+
+# Automatically restore the volume of streams and devices
+load-module module-device-restore
+load-module module-stream-restore
+load-module module-card-restore
+
+# Load several protocols
+load-module module-native-protocol-unix
+
+# Automatically restore the default sink/source when changed by the user during runtime
+load-module module-default-device-restore
+
+# Automatically suspend sinks/sources that become idle for too long
+load-module module-suspend-on-idle
+
+
+# Enable the native pulseaudio protocol, restrict to ip groups
+load-module module-native-protocol-tcp auth-ip-acl=127.0.0.1;192.168.2.0/24;10.0.0.0/23
+
+
+# Publish the audio stream via zeroconf (so other pulseaudio instances can see it)
+load-module module-zeroconf-publish
+
+
+# Publish the first alsa card as "Stereoanlage"
+load-module module-alsa-card device_id=0 sink_name=audiojack sink_properties=device.description="Schlafzimmer"
+
+
+# Load bluetooth access
+load-module module-bluetooth-policy
+load-module module-bluetooth-discover
+load-module module-bluez5-discover
+

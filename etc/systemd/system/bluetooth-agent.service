@@ -6,4 +6,4 @@ WantedBy=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python /home/alarm/simple-agent.py
+ExecStart=/usr/bin/python /home/alarm/media-pi/scripts/simple-agent.py

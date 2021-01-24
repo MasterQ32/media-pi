@@ -6,5 +6,5 @@ WantedBy=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/brcm_patchram_plus --patchram /root/BCM43430A1.hcd --enable_hci --no2bytes --tosleep=1000000 --baudrate=921600 /dev/ttyAMA0
+ExecStart=/usr/bin/brcm_patchram_plus --patchram /home/alarm/media-pi/data/BCM43430A1.hcd --enable_hci --no2bytes --tosleep=1000000 --baudrate=921600 /dev/ttyAMA0
 ExecStop=/usr/bin/killall brcm_patchram_plus
